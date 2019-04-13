@@ -1,0 +1,60 @@
+{
+  "name": "express-es6-mongo-docker",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel server -d dist --source-maps",
+    "serve": "npm run build && node dist/index.js",
+    "start": "docker-compose up",
+    "start:local": "babel-node server/index.js",
+    "start:server": "nodemon server/index.js --exec babel-node",
+    "test": "jest --runInBand --verbose",
+    "coverage": "jest --coverage --runInBand --verbose",
+    "eslint": "eslint server/**/*.js --ignore-pattern \"node_modules/\""
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
+    "eslint": "^5.16.0",
+    "nodemon": "^1.18.10",
+    "prettier": "^1.16.4"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "connect-multiparty": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
+    "eslint-plugin-jest": "^22.4.1",
+    "eslint-plugin-node": "^8.0.1",
+    "express": "^4.16.4",
+    "jest": "^24.7.1",
+    "jest-cli": "^24.7.1",
+    "jwt-simple": "^0.5.6",
+    "mongoose": "^5.5.0",
+    "mongoose-pagination": "^1.0.0",
+    "uuid": "^3.3.2"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "eslintConfig": {
+    "plugins": [
+      "node",
+      "jest"
+    ],
+    "env": {
+      "jest/globals": true,
+      "node": true,
+      "es6": true
+    },
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 2018
+    }
+  }
+}
