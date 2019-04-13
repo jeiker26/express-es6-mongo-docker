@@ -11,7 +11,7 @@ You have to build the docker images:
 ```
 docker-compose build
 ```
-* If you update: `Dockerfile`or `docker-compose.yml`yo have to rebuild.
+* If you update: `Dockerfile`or `docker-compose.yml` yuo have to rebuild.
 
 ## Run
 ```
